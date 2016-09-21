@@ -15,8 +15,8 @@ module.exports = function(){
   res._putRequest = xeroClient._putRequest;
 
   return function(config){
-    config.customHeaders = config.customHeaders || {};
     config = config || {};
+    config.customHeaders = config.customHeaders || {};
     config.xeroConsumerKey = config.xeroConsumerKey || process.env.XERO_CONSUMER_KEY;
     config.xeroConsumerSecret = config.xeroConsumerSecret || process.env.XERO_CONSUMER_SECRET;
     config.xeroCallbackUrl = config.xeroCallbackUrl || process.env.XERO_CALLBACK_URL;
