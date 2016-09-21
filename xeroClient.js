@@ -40,7 +40,7 @@ exports.setConfig = function(cfg){
     null,
     'HMAC-SHA1',
     null,
-    customHeaders
+    Object.assign({}, cfg.customHeaders, customHeaders)
   );
   // This is important - Xero will redirect to this URL after successful authentication
   // and provide the request token as query parameters
